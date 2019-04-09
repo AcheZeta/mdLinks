@@ -1,0 +1,19 @@
+{
+  "name": "md-links-refact",
+  "version": "1.0.0",
+  "description": "\"Revisar links en archivos md\"",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "AcheZeta",
+  "license": "ISC",
+  "bin": {
+    "mdlinks": "./cli.js"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
