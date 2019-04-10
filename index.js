@@ -1,5 +1,4 @@
 const fs = require('fs');
-const fetch = require('node-fetch');
 const links = [];
 
 const readFiles = () => {
@@ -22,7 +21,6 @@ const grab = (flag) => {
     return (index === -1) ? null : process.argv[index + 1];
 }
 const docname = grab('--doc');
-const validate = grab('--validate');;
 
 if (!docname) {
     console.log("Especifica el nombre del archivo usando --doc")
