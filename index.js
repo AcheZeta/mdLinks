@@ -1,18 +1,31 @@
-//Importa los modulos que vamos a ocupar  
-let fs = require('fs');
+const fs = require('fs');
+const fetch = require('node-fetch');
+const links = [];
 
-//Le indicamos el modulo y la acción con tres parámetros. 1o archivo que deseamos leer. 2o parametro opcional (carácteres), 3o Callback con dos parametros, error y el archivo
 const readFiles = () => {
     fs.readFile(docname, 'utf-8', (err, data) => {
         if (err) {
             console.log('error: ', err);
         } else {
-            const regExp = /(https?:\/\/[^\s]+)/g;
+            // const regExplink =  /\[((.+?))\]\((http|https|ftp|ftps).+?\)/g;
+            const regExp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
             const result = data.match(regExp);
-            console.log(data);
-            console.log(`links: ${result}`)
+            links.push(result);
+            console.log(links)
+            return result
         }
     });
 }
 
-console.log(readFiles)
+const grab = (flag) => {
+    let index = process.argv.indexOf(flag);
+    return (index === -1) ? null : process.argv[index + 1];
+}
+const docname = grab('--doc');
+const validate = grab('--validate');;
+
+if (!docname) {
+    console.log("Especifica el nombre del archivo usando --doc")
+} else {
+    readFiles()
+}

@@ -1,5 +1,2 @@
 #!/usr/bin/env node
-
-const [,, ...args] = process.argv
-
-console.log(`Hello ${args}`)
+const mds = require('./index.js');

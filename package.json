@@ -14,6 +14,8 @@
   "bin": {
     "mdlinks": "./cli.js"
   },
-  "dependencies": {},
+  "dependencies": {
+    "node-fetch": "^2.3.0"
+  },
   "devDependencies": {}
 }
