@@ -21,6 +21,10 @@ Antes que nada, asegúrate de tener un editor de texto en condiciones, puedes us
 
 ### Instalación 🔧
 
+Puedes instalar el proyecto desde [npm](https://www.npmjs.com/) usando 
+```
+npm i md-links-refact
+```
 Haz tu propio fork de este repositorio.
 Clona tu fork a tu computadora (copia local).
 Instala las dependencias del proyecto con el comando npm install.
